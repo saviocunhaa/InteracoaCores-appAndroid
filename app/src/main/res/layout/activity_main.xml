@@ -5,15 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-
+    android:id="@+id/someView"
     >
 
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
-        tools:layout_editor_absoluteX="136dp">
+        tools:layout_editor_absoluteX="136dp"
+        android:background="@drawable/rounded_corners"
+        android:layout_marginLeft="20dp"
+        android:scrollbars="none"
+        >
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -22,7 +26,9 @@
             android:orientation="horizontal"
             app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            android:gravity="center"
+            >
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/red"
@@ -52,7 +58,7 @@
                 android:id="@+id/pink"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_margin="20dp"
+                android:layout_margin="10dp"
                 android:background="@drawable/bg_button"
                 android:backgroundTint="#FF3278"/>
             <androidx.appcompat.widget.AppCompatButton
@@ -76,24 +82,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.53"
+        android:layout_marginTop="20dp"
         app:placeholderText="#ffffff">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputHexColor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="#ffffff"/>
+            android:hint="Digite a cor em #hexadecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/button"
+    <TextView
+        android:id="@+id/textViewStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="trocar de cor"
+        android:layout_marginTop="120dp"
+        android:text=""
         android:textAllCaps="true"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
